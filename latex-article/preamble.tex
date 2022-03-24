@@ -1,6 +1,6 @@
 % Margins ----------------------------------------------------------------------
 
-\usepackage[margin=1.25in]{geometry}
+\usepackage[margin=1in]{geometry}
 
 % AMS --------------------------------------------------------------------------
 
@@ -18,9 +18,8 @@
 % Font -------------------------------------------------------------------------
 
 \usepackage[T1]{fontenc}
-\usepackage[default]{lato} % Lato as text font
 % \usepackage[utopia, varg]{newtxmath}
-% \renewcommand{\rmdefault}{futs} % Utopia as text font 
+\renewcommand{\rmdefault}{futs} % Utopia as text font 
 
 % Small adjustments to text kerning
 \usepackage{microtype}
@@ -55,17 +54,17 @@
 \definecolor{jet}{HTML}{131516}
 \definecolor{asher}{HTML}{555F61}
 \definecolor{slate}{HTML}{314F4F}
-
+\definecolor{dark-alice}{HTML}{107896}
 
 % Hyperlinks -------------------------------------------------------------------
 
 \usepackage{hyperref}
 \hypersetup{
     colorlinks= true,
-    citecolor= dark-maroon,
-    linkcolor= dark-maroon,
-    filecolor= dark-maroon,      
-    urlcolor= dark-maroon,
+    citecolor= dark-alice,
+    linkcolor= dark-alice,
+    filecolor= dark-alice,      
+    urlcolor= dark-alice,
 }
 
 
@@ -114,20 +113,20 @@
 \usepackage{setspace}
 
 % title
-\pretitle{\begin{spacing}{1}\begin{flushleft}\huge}
-\posttitle{\end{flushleft}\end{spacing}\vspace{-5mm}}
+\pretitle{\begin{center}\Large}
+\posttitle{\end{center}}
 
 % author, note don't use \and 
-\preauthor{\begin{flushleft}\large}
-\postauthor{\end{flushleft}\vspace{-7.5mm}}
+\preauthor{\begin{center}\large}
+\postauthor{\end{center}\vspace{-7.5mm}}
 
 % date
-\predate{\begin{flushleft}\scshape\color{asher}}
-\postdate{\end{flushleft}\vspace{-5mm}}
+\predate{\begin{center}\scshape\color{asher}}
+\postdate{\end{center}\vspace{-5mm}}
 
 % Abstract
 \renewenvironment{abstract}
- {\noindent\rule{\linewidth}{.5pt}\noindent}
+ {\noindent\noindent\textsc{Abstract: }\rule{.88\linewidth}{.5pt}\noindent}
  {\noindent\rule{\linewidth}{.5pt}}
 
 % alternative abstract
@@ -141,32 +140,26 @@
 
 % Section and Subsection Styling -----------------------------------------------
 
-\usepackage[explicit]{titlesec}
+%\usepackage[explicit]{titlesec}
 
-\titleformat{\section}
-  {\Large \bf \color{navyblue}}
-  {\thesection \,---}
-  {0.25em}
-  {#1}
+%\titleformat{\section}
+%  {\Large \bf \color{navyblue}}
+%  {\thesection \,---}
+%  {0.25em}
+%  {#1}
   
-\titleformat{\subsection}
-  {\fontsize{11}{10}\it}
-  {\thesubsection.}
-  {1em}
-  {#1}
+%\titleformat{\subsection}
+%  {\fontsize{11}{10}\it}
+%  {\thesubsection.}
+%  {1em}
+%  {#1}
 
 
 % Footnote ---------------------------------------------------------------------
 
-% Spacing between footnotes on same page
-\addtolength{\footnotesep}{1mm}
-
 % Space after footnote number
 \let\oldfootnote\footnote
 \renewcommand\footnote[1]{\oldfootnote{\ #1}}
-
-% No footnote line
-\renewcommand\footnoterule{}
 
 % No supsercript in footer
 \makeatletter
@@ -191,10 +184,9 @@
 \usepackage{caption}
 
 \DeclareCaptionLabelSeparator{threedash}{\,---\,}
-\DeclareCaptionFont{navyblue}{\color{navyblue}}
 \DeclareCaptionFont{jet}{\color{jet}}
-\captionsetup[table]{format=plain, labelsep=threedash, font={navyblue, bf}}
-\captionsetup[figure]{format=plain, labelsep=threedash, font={navyblue, bf}}
+\captionsetup[table]{format=plain, labelsep=threedash, font={sc}}
+\captionsetup[figure]{format=plain, labelsep=threedash, font={sc}}
 
 % Alternative: Left align captions
 % \captionsetup[table]{labelfont=it, textfont={navyblue, bf}, labelsep=newline, justification=raggedright, singlelinecheck=off}
@@ -219,10 +211,6 @@
 % \begin{adjustbox}{width = 1.2\textwidth, center}
 % \end{adjustbox}
 \usepackage{adjustbox}
-
-% Slighty more spacing between rows
-\usepackage{array}
-\renewcommand\arraystretch{1.2}
 
 % Table with easy to use footnotes
 % \begin{threeparttable}
