@@ -36,7 +36,7 @@
 \setbeamerfont{framesubtitle}{size = \small, shape = \itshape}
 
 % Block
-\setbeamercolor{block title}{fg = white, bg = accent2}
+\setbeamercolor{block title}{fg = white, bg = accent}
 \setbeamercolor{block body}{fg = jet, bg = jet!10!white}
 
 % Title page
@@ -69,6 +69,9 @@
 \setbeamercolor{caption}{fg=jet!70!white}
 \setbeamercolor{caption name}{fg=jet}
 \setbeamerfont{caption name}{shape = \itshape}
+
+% Esttab significance stars 
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 
 % Bullet points
 
@@ -104,11 +107,11 @@
 \setbeamerfont{bibliography entry location}{size = \footnotesize, shape = \itshape}
 \setbeamerfont{bibliography entry note}{size = \footnotesize}
 
-\setbeamercolor{bibliography item}{fg = jet}
-\setbeamercolor{bibliography entry author}{fg = accent!60!jet}
-\setbeamercolor{bibliography entry title}{fg = jet}
-\setbeamercolor{bibliography entry location}{fg = jet}
-\setbeamercolor{bibliography entry note}{fg = jet}
+\setbeamercolor{bibliography item}{fg = asher}
+\setbeamercolor{bibliography entry author}{fg = asher}
+\setbeamercolor{bibliography entry title}{fg = asher}
+\setbeamercolor{bibliography entry location}{fg = asher}
+\setbeamercolor{bibliography entry note}{fg = asher}
 
 %% Remove bibliography symbol in slides
 \setbeamertemplate{bibliography item}{}
@@ -122,10 +125,10 @@
 \usepackage{hyperref}
 \hypersetup{
   colorlinks = true,
-  linkcolor = accent2,
-  filecolor = accent2,
-  urlcolor = accent2,
-  citecolor = accent2,
+  linkcolor = accent,
+  filecolor = accent,
+  urlcolor = accent,
+  citecolor = gray,
 }
 
 
@@ -182,11 +185,11 @@
 
 % Color citations for slides
 \newenvironment{citecolor}
-    {\footnotesize\begin{color}{accent2}}
+    {\footnotesize\begin{color}{gray}}
     {\end{color}}
 
-\newcommand{\citetcolor}[1]{\footnotesize\textcolor{accent2}{\citet{#1}}}
-\newcommand{\citepcolor}[1]{\footnotesize\textcolor{accent2}{\citep{#1}}}
+\newcommand{\citetcolor}[1]{\footnotesize\textcolor{gray}{\citet{#1}}}
+\newcommand{\citepcolor}[1]{\footnotesize\textcolor{gray}{\citep{#1}}}
 
 % Tables -------------------------------------------
 % Tables too big
