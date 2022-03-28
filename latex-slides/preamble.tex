@@ -48,10 +48,14 @@
 {
     %\begin{centering}
         \vspace{20mm}
-        {\Large \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle}\\
-        {\large \itshape \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle}\\ \vspace{10mm}
-        {\insertauthor}\\
-        {\color{asher}\small{\insertdate}}\\
+        {\Large \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle}\par%
+        \ifx\insertsubtitle\@empty%
+        \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle} \large \itshape \usebeamercolor[fg]{subtitle}\insertsubtitle}%
+        \fi%
+        {\vspace{10mm}\insertauthor}\\
+        {\color{asher}\small{\insertdate}}
     %\end{centering}
 }
 
@@ -116,10 +120,6 @@
 %% Remove bibliography symbol in slides
 \setbeamertemplate{bibliography item}{}
 
-
-
-
-
 % Links ----------------------------------------------
 
 \usepackage{hyperref}
@@ -134,8 +134,8 @@
 
 % Line spacing --------------------------------------
 \usepackage{setspace}
-\setstretch{1.3}
-
+\setstretch{1.2}
+\setlength{\parskip}{.5\baselineskip}
 
 % \begin{columns} -----------------------------------
 \usepackage{multicol}
@@ -163,7 +163,7 @@
 \setbeamerfont{myTOC}{series=\bfseries, size=\Large}
 \AtBeginSection[]{
         \frame{
-            \frametitle{Roadmap}
+            %\frametitle{Roadmap}
             \tableofcontents[current]   
         }
     }
@@ -188,8 +188,8 @@
     {\footnotesize\begin{color}{gray}}
     {\end{color}}
 
-\newcommand{\citetcolor}[1]{\footnotesize\textcolor{gray}{\citet{#1}}}
-\newcommand{\citepcolor}[1]{\footnotesize\textcolor{gray}{\citep{#1}}}
+\newcommand{\citetcolor}[1]{{\footnotesize\textcolor{gray}{\citet{#1}}}}
+\newcommand{\citepcolor}[1]{{\footnotesize\textcolor{gray}{\citep{#1}}}}
 
 % Tables -------------------------------------------
 % Tables too big
