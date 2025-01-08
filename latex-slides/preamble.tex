@@ -180,7 +180,7 @@
   interior hidden,
   top = -6pt, 
   bottom = -6pt,
-  left = 4pt, 
+  left = -30pt, 
   right = 0pt,
   boxrule = 0pt, 
   frame hidden, 
@@ -190,12 +190,12 @@
   breakable,
   listing options={
     basicstyle = \small\ttfamily,
-    columns = fixed,
+    columns = flexible,
     keepspaces = true,
-    language = #1
+    language = #1,
+    showstringspaces=false 
   }
 }
-
 % Remove annoying over-full box warnings -----------
 \vfuzz2pt 
 \hfuzz2pt
